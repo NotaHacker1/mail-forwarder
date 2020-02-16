@@ -9,9 +9,7 @@ pipeline {
                     def orecp = jss.parseText("${recipients}");
                     Map mTemp = (Map) orecp;
                     mTemp.each { name, address ->
-                        mail body: "Dear ${name} testy testy testington",
-                        subject: "test email from Jenkins",
-                        to: "${address}";
+                        sendMail(name, address);
                     }
                 }
             }
