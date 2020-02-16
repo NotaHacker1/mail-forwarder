@@ -8,7 +8,7 @@ pipeline {
                     //println key;
                     //println value;
                     println "${recipients}"
-                    }
+                    //}
                 }
             }
         }
