@@ -1,5 +1,4 @@
 import groovy.json.JsonSlurper
-import sendMail.groovy
 pipeline {
     agent any
     stages {
