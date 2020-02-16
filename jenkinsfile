@@ -17,10 +17,12 @@ pipeline {
         }
         stage('send test mails') {
             steps {
-                mrecp.each { key, value ->
-                    mail body: "Dear ${key} testy testy testington",
-                    subject: 'test email from Jenkins',
-                    to: "${value}"
+                script{
+                    mrecp.each { key, value ->
+                        mail body: "Dear ${key} testy testy testington",
+                        subject: 'test email from Jenkins',
+                        to: "${value}"
+                    }
                 }
             }
         }
