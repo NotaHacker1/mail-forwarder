@@ -9,7 +9,6 @@ pipeline {
                     def orecp = jss.parseText("${recipients}");
                     Map mTemp = (Map) orecp;
                     sendMail(mTemp);
-                    }
                 }
             }
         }
