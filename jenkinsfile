@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script{
                     println env.mrecp;
-                    "${mrecp}".each { key, value ->
+                    env.mrecp.each { key, value ->
                         mail body: "Dear ${key} testy testy testington",
                         subject: 'test email from Jenkins',
                         to: "${value}";
