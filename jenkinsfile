@@ -5,7 +5,7 @@ pipeline {
             steps {
                emailext body: 'testy testy testington',
                 subject: 'test email from Jenkins',
-                to: 'andrewsampson@hotmail.co.uk'
+                to: 'andrewsampson738@gmail.com'
             }
         }
     }
