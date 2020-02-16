@@ -9,7 +9,7 @@ pipeline {
                     def jss = new JsonSlurper()
                     def orecp = jss.parseText("${recipients}");
                     Map mTemp = (Map) orecp;
-                    "${mrecp}" = mTemp;
+                    env.mrecp = mTemp;
                 }
             }
         }
