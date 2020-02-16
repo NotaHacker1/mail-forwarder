@@ -4,11 +4,12 @@ pipeline {
         stage('pull recipeints') {
             steps {
                 script {
-                    //"${recipients}".each { key, value ->
-                    //println key;
-                    //println value;
-                    println "${recipients}"
-                    //}
+                    def map mrecp = "${recipients}"
+                    mrecp.each { key, value ->
+                    println key;
+                    println value;
+                    //println "${recipients}"
+                    }
                 }
             }
         }
