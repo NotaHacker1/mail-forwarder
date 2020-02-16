@@ -8,6 +8,6 @@ def call(name, address) {
     //recipients: "${address}"];
     emailext( body: "Dear ${name} testy testy testington", mimeType: 'text/html',
         replyTo: 'swclpec@gmail.com', subject: "test email from Jenkins",
-        to: : "${address}"
+        to: "${address}"
     )
 }
