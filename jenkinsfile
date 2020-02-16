@@ -8,13 +8,10 @@ pipeline {
         stage('send test mails') {
             steps {
                 script{
-                    def jss = new JsonSlurper()
-                    def orecp = jss.parseText("${recipients}");
-                    Map mTemp = (Map) orecp;
-                    mTemp.each { name, address ->
-                        println "out";
-                        sendMail(name, address);
-                    }
+                    mail( body: "Dear testy testy testington", mimeType: 'text/html',
+                    replyTo: 'swclpec@gmail.com', subject: "test email from Jenkins",
+                    to: "${recipients}"
+                    )
                 }
             }
         }
