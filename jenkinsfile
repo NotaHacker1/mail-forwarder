@@ -1,23 +1,13 @@
 import groovy.json.JsonSlurper
-mrecp = [:]
 pipeline {
     agent any
     stages {
-        stage('pull recipeints') {
-            steps {
-                script {
-                    def jss = new JsonSlurper()
-                    def orecp = jss.parseText("${recipients}");
-                    Map mTemp = (Map) orecp;
-                    env.mrecp = mTemp;
-                }
-            }
-        }
         stage('send test mails') {
             steps {
                 script{
-                    mTemp = env.mrecp;
-                    println mTemp;
+                    def jss = new JsonSlurper()
+                    def orecp = jss.parseText("${recipients}");
+                    Map mTemp = (Map) orecp;
                     mTemp.each { key, value ->
                         mail body: "Dear ${key} testy testy testington",
                         subject: 'test email from Jenkins',
