@@ -8,11 +8,11 @@ pipeline {
                     def jss = new JsonSlurper()
                     def orecp = jss.parseText("${recipients}");
                     Map mTemp = (Map) orecp;
-                    mTemp.each { key, value ->
-                        println "sent to ${key} at ${value}"
-                        //mail body: "Dear ${key} testy testy testington",
-                        //subject: 'test email from Jenkins',
-                        //to: "${value}"
+                    mTemp.each { name, address ->
+                        println "sent to ${name} at ${address}";
+                        mail body: "Dear ${name} testy testy testington",
+                        subject: 'test email from Jenkins',
+                        to: "${address}"
                     }
                 }
             }
