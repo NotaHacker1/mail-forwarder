@@ -2,9 +2,13 @@ pipeline {
     agent any
     stages {
         stage('pull recipeints') {
-            "${recipients}".each { key, value ->
-                println key;
-                println value;
+            steps {
+                script {
+                   "${recipients}".each { key, value ->
+                    println key;
+                    println value;
+                    }
+                }
             }
         }
         //stage('send test mail') {
