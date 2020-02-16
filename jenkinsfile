@@ -8,7 +8,7 @@ pipeline {
         stage('send test mails') {
             steps {
                 script{
-                    mail( body: "Dear testy testy testington", mimeType: 'text/html',
+                    mail( body: "${FILE,path='C:\\Users\\andre\\Documents\\Labour\\Nominations are in.htm'}", mimeType: 'text/html',
                     replyTo: 'swclpec@gmail.com', subject: "test email from Jenkins",
                     to: "${recipients}"
                     )
