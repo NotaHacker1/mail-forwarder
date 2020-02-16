@@ -4,7 +4,8 @@ pipeline {
         stage('pull recipeints') {
             steps {
                 script {
-                    def mrecp = "${recipients}"
+                    def orecp = "${recipients}"
+                    Map mrecp = (Map) orecp;
                     mrecp.each { key, value ->
                     println key;
                     println value;
