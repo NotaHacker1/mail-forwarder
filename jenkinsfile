@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     def jss = groovy.json.JsonSlurper()
-                    def object orecp = jss.parseText("${recipients}");
+                    def orecp = jss.parseText("${recipients}");
                     Map mrecp = (Map) orecp;
                     mrecp.each { key, value ->
                     println key;
