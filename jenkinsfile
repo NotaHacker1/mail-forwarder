@@ -19,7 +19,7 @@ pipeline {
 def sendMail(mTemp) {
     mTemp.each { name, address ->
         println "Sent to ${name} at ${address}";
-        emailext body: "Dear ${name} testy testy testington",
+        mail body: "Dear ${name} testy testy testington",
         subject: "test email from Jenkins",
         to: "${address}";
     }
