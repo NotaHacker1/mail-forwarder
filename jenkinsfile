@@ -1,4 +1,7 @@
 import groovy.json.JsonSlurper
+
+@Library('labour-lib')
+
 pipeline {
     agent any
     stages {
