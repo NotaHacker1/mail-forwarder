@@ -8,7 +8,7 @@ pipeline {
                     def jss = new JsonSlurper()
                     def orecp = jss.parseText("${recipients}");
                     Map mTemp = (Map) orecp;
-                    sendMail(mTemp);
+                    sendMails(mTemp);
                 }
             }
         }
@@ -16,11 +16,17 @@ pipeline {
 }
 
 @NonCPS
-def sendMail(mTemp) {
+def sendMails(mTemp) {
     mTemp.each { name, address ->
         println "Sent to ${name} at ${address}";
-        mail body: "Dear ${name} testy testy testington",
-        subject: "test email from Jenkins",
-        to: "${address}";
+        sendMail(name, address);
+    }
+}
+
+def sendMail(name, address) {
+    println "Sent to ${name} at ${address}";
+    mail body: "Dear ${name} testy testy testington",
+    subject: "test email from Jenkins",
+    to: "${address}";
     }
 }
