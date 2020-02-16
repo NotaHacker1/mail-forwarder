@@ -2,9 +2,11 @@ pipeline {
     agent any
     stages {
         stage('send test mail') {
-            emailext body: 'testy testy testington',
-            subject: 'test email from Jenkins',
-            to: 'andrewsampson@hotmail.co.uk'
+            steps {
+               emailext body: 'testy testy testington',
+                subject: 'test email from Jenkins',
+                to: 'andrewsampson@hotmail.co.uk'
+            }
         }
     }
 }
