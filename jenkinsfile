@@ -4,13 +4,12 @@ pipeline {
         stage('pull recipeints') {
             steps {
                 script {
-                    def jss = groovy.json.JsonSlurper()
+                    def jss = new JsonSlurper()
                     def orecp = jss.parseText("${recipients}");
                     Map mrecp = (Map) orecp;
                     mrecp.each { key, value ->
                     println key;
                     println value;
-                    //println "${recipients}"
                     }
                 }
             }
