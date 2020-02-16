@@ -11,7 +11,7 @@ pipeline {
                     mTemp.each { name, address ->
                         println "sent to ${name} at ${address}";
                         mail body: "Dear ${name} testy testy testington",
-                        subject: 'test email from Jenkins',
+                        subject: "test email from Jenkins",
                         to: "${address}"
                     }
                 }
