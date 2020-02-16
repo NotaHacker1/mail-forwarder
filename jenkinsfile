@@ -12,7 +12,7 @@ pipeline {
                         println "sent to ${key} at ${value}"
                         mail body: "Dear ${key} testy testy testington",
                         subject: 'test email from Jenkins',
-                        to: "${value}";
+                        to: "${value}"
                     }
                 }
             }
