@@ -1,1 +1,7 @@
-echo "it works"
+pipeline {
+    stage('send test mail') {
+        emailext body: 'testy testy testington',
+        subject: 'test email from Jenkins',
+        to: 'andrewsampson@hotmail.co.uk'
+    }
+}
