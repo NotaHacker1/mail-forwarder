@@ -16,8 +16,8 @@ pipeline {
         stage('send test mails') {
             steps {
                 script{
-                    println env.mrecp;
                     mTemp = env.mrecp;
+                    println mTemp;
                     mTemp.each { key, value ->
                         mail body: "Dear ${key} testy testy testington",
                         subject: 'test email from Jenkins',
