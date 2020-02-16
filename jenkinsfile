@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('send test mail') {
             steps {
-               emailext body: 'testy testy testington',
+               mail body: 'testy testy testington',
                 subject: 'test email from Jenkins',
                 to: 'andrewsampson738@gmail.com'
             }
